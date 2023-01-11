@@ -36,13 +36,14 @@ En esta homework encontrarás casi terminada la Music App. Sin embargo, deberás
 npm install
 ```
 
--  Listo!! Ya puedes correr los test:
+-  Listo!! Ya puedes correr los test y levantar el proyecto con los comandos:
 
 ```bash
 npm test
+npm start
 ```
 
-Si deseas correr por cada uno de los test, puedes utilizar:
+Si deseas correr por test, puedes utilizar:
 
 ```bash
 npm run test:01
@@ -58,33 +59,27 @@ npm run test:01
 npm run server
 ```
 
----
-
-### **⚠️ IMPORTANTE**
-
-Para levantar el proyecto, siempre que relices las homeworks de **EJERCICIOS** deberás realizar los siguientes pasos:
-
-Corre en tu terminal el comando:
+<<<<<<< HEAD
+🔹 Para visualizar la aplicación desde el navegador, debes abrir una tercera terminal y ejecutar el comando:
 
 ```bash
-node -v
+npm start
 ```
 
-Si tienes la versión 16 / 17, debes correr el comando:
+Ingresando a <http://localhost:3000> desde el navegador, podrás ver en tiempo real el resultado de nuestro trabajo.
+=======
+Los dos primeros test pasarán sin que hagas nada, simplemente están para que te ayuden a verificar que estás realizando correctamente los pasos y que no tienes errores.
 
-```bash
-npm run start16
-```
+<br />
 
-Si tienes la version 18, debes correr el comando:
+-  Ingresando a <http://localhost:3000> desde el navegador, podrás ir viendo en tiempo real el resultado de tu trabajo.
 
-```bash
-npm run start18
-```
+<br />
 
 <br />
 
 -  Ingresando a <http://localhost:3000> desde el navegador, podremos ir viendo en tiempo real el resultado de nuestro trabajo.
+>>>>>>> 7f4bfec170b210cdec1b3d2861b04883162a2c08
 
 <br />
 
@@ -158,16 +153,6 @@ Además:
    -  `name` y su valor sea **email**.
    -  `placeholder` y su valor sea **"Escribe tu email..."**
    -  `type` y su valor sea **text**
--  Una etiqueta label y su texto sea **'Teléfono:'**
--  Otra etiqueta input con los siguientes atributos:
-   -  `name` y su valor sea **phone**.
-   -  `placeholder` y su valor sea **"Escribe un teléfono..."**
-   -  `type` y su valor sea **number**
--  Una etiqueta label y su texto sea **'Asunto:'**
--  Otra etiqueta input con los siguientes atributos:
-   -  `name` y su valor sea **subject**.
-   -  `placeholder` y su valor sea **"Escribe el asunto..."**
-   -  `type` y su valor sea **text**
 -  Una etiqueta label y su texto sea **'Mensaje:'**
 -  Una etiqueta textarea con los siguientes atributos:
    -  `name` y su valor sea **message**.
@@ -191,8 +176,6 @@ Además:
 
 -  "**name**", su valor debe ser un string vacío.
 -  "**email**", su valor debe ser un string vacío.
--  "**phone**", su valor debe ser 0.
--  "**subject**", su valor debe ser un string vacío.
 -  "**message**", su valor debe ser un string vacío.
 
 Ejemplo:
@@ -200,7 +183,6 @@ Ejemplo:
 ```jsx
 const [inputs, setInputs] = React.useState({
    name: '',
-   email: '',
 });
 ```
 
@@ -208,8 +190,6 @@ const [inputs, setInputs] = React.useState({
 
 -  "**name**", su valor debe ser un string vacío.
 -  "**email**", su valor debe ser un string vacío.
--  "**phone**", su valor debe ser un string vacío.
--  "**subject**", su valor debe ser un string vacío.
 -  "**message**", su valor debe ser un string vacío.
 
 3. Conecta el estado con el formulario. Para ello, crea el atributo **value** en cada input asignándole el estado correspondiente. Ejemplo:
@@ -256,8 +236,6 @@ b) Valida cada input del formulario que viene del objeto **inputs** que se recib
 
 -  En el input **name**, si este campo está vacío, agrega la propiedad name al objeto **errors** en donde su valor sea "Se requiere un nombre".
 -  En el input **email**, valida si el email que ingresa el usuario coincide con el formato regex de la constante `regexEmail`, aplicándole a esta el método `test()` y dentro de sus paréntesis coloca `inputs.email`; agrega la propiedad email al objeto **errors** en donde su valor sea "Debe ser un correo electrónico".
--  En el input **phone**, valida si el phone que ingresa el usuario es un número positivo; agrega la propiedad phone al objeto **errors** en donde su valor sea "Sólo números positivos".
--  En el input **subject**, si este campo está vacío, agrega la propiedad subject al objeto **errors** en donde su valor sea "Se requiere un asunto".
 -  En el input **message**, si este campo está vacío, agrega la propiedad message al objeto **errors** en donde su valor sea "Se requiere un mensaje".
 
 Ejemplo:
