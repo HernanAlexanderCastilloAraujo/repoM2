@@ -1,0 +1,18 @@
+.contenedor {
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  background-color: antiquewhite;
+  margin: 20px;
+}
+
+.card {
+  width: fit-content;
+  padding-left: 1em;
+  padding-right: 1em;
+  height: 8em;
+  background-color: rgb(201, 201, 55);
+  color: white;
+  border-radius: 10px;
+}

@@ -1,17 +1,34 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import './card.css';
+import { deleteProduct } from '../../redux/actions/actions';
 
-export function Card({ name, price }) {
-   return (
-      <div className='cardBg'>
-         <h5>{name}: </h5>
-         <h5>${price}</h5>
-         <button className='cardBtn'>X</button>
-      </div>
-   );
+export class Card extends React.Component{
+   constructor(props){
+      super(props)
+
+     
+   }
+
+   handleDelete = () => {
+      this.props.deleteProduct(this.props.id)
+ }
+
+   render(){
+      return (
+         <div className='cardBg'>
+            <h5>{this.props.name}: </h5>
+            <h5>${this.props.price}</h5>
+            <button onClick={this.handleDelete} className='cardBtn'>X</button>
+         </div>
+      )
+   };
+};
+
+export function mapDispatchToProps(dispatch) {
+   return {
+      deleteProduct: (id) => dispatch(deleteProduct(id)),
+   };
 }
-
-export function mapDispatchToProps() {}
 
 export default connect(null, mapDispatchToProps)(Card);

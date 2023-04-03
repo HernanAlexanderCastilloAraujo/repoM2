@@ -74,4 +74,4 @@ describe('02 | Componente "Botones"', () => {
     botonM2.simulate("click");
     expect(alertText).toBe(alerts.m2);
   });
-});
+})

@@ -1,1 +1,73 @@
 // Código de Nav acá
+.navBar { // le damos estilo a la barra de navegacion
+  background-color: @navBarBackground; // le damos color de fondo
+  color: @wild-sand; // le damos color a la letra
+  border: 1px solid @sea-shell; // le damos color al borde
+  display: flex; 
+  flex-direction: column; // le damos direccion a la barra de navegacion
+  align-items: center; // le damos alineacion a la barra de navegacion
+  gap: 1em; // le damos un espacio entre los elementos
+  margin-bottom: 0.5em; // le damos un margen inferior
+  position: fixed; // extracredito fijar la barra de navegacion
+  width: 100%; // le damos un ancho al contenedor de la barra de navegacion 
+ opacity: 0.9; // le damos opacidad a la barra de navegacion
+
+
+
+  .optionsContainer { // le damos estilo al contenedor de las opciones
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.1em;
+
+    .ov-btn-slide-right{ // extracredito, animacion de los botones de navegador
+      
+      background: @waterloo; /* color de fondo */
+      color: #000103; /* color de fuente */
+      border: 2px solid #094853; /* tamaño y color de borde */
+      padding: 16px 20px;
+      border-radius: 6px; /* redondear bordes */
+      position: relative;
+      z-index: 1;
+      overflow: hidden;
+      display: inline-block;
+
+    }
+    .ov-btn-slide-right:hover {
+      color: #000103; /* color de fuente hover */
+    }
+    .ov-btn-slide-right::after {
+      content: "";
+      background: #1fe6b4; /* color de fondo hover */
+      position: absolute;
+      z-index: -1;
+      padding: 16px 20px;
+      display: block;
+      top: 0;
+      bottom: 0;
+      left: 100%;
+      right: -100%;
+      -webkit-transition: all 0.35s;
+      transition: all 0.35s;
+    }
+    .ov-btn-slide-right:hover::after {
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      -webkit-transition: all 0.35s;
+      transition: all 0.35s;
+    }
+
+    
+  }
+
+
+
+  @media (max-width: @phone) { // le damos estilo a la barra de navegacion en modo movil
+    .optionsContainer {
+      width: 90%;
+    }
+
+  }
+}

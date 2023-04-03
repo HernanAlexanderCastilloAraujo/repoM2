@@ -2,7 +2,7 @@
 
 ## **Duración estimada 🕒**
 
-60 minutos
+2 horas
 
 <br />
 
@@ -48,7 +48,6 @@ Si deseas correr por test, puedes utilizar:
 npm run test:01
 ```
 
-<<<<<<< HEAD
 🔹 Para visualizar la aplicación desde el navegador, debes abrir una segunda terminal y ejecutar el comando:
 
 ```bash
@@ -56,12 +55,6 @@ npm start
 ```
 
 Ingresando a <http://localhost:3000> desde el navegador, podrás ver en tiempo real el resultado de nuestro trabajo.
-
-=======
-<br />
-
--  Ingresando a <http://localhost:3000> desde el navegador, podremos ir viendo en tiempo real el resultado de nuestro trabajo.
->>>>>>> 7f4bfec170b210cdec1b3d2861b04883162a2c08
 
 ---
 
@@ -131,41 +124,21 @@ Estarás trabajando con algunos componentes y con las herramientas de Redux.
 
 5. Importa la libería **axios**.
 
-6. Define y exporta una función llamada getStoreName. Esta función deberá realizar una **request** a `http://localhost:3001/store` utilizando el método `get` de **axios** y retornar un objeto con la propiedad **type** con el valor _GET_STORE_NAME_, y como payload la respuesta que brinde la **api**.
+6. Define y exporta una función llamada getStoreName. Esta función deberá retornar una función y en el cuerpo de esta realizar una **request** a `http://localhost:3001/store` utilizando el método `get` de **axios** y retornar un dispatch de un objeto con la propiedad **type** con el valor _GET_STORE_NAME_, y como payload la respuesta que brinde la **api**.
 
 Acá tienes un snippet para poder realizar la request:
 
 ```js
 return async function (dispatch) {
-<<<<<<< HEAD
-  try {
-    let response = await axios.get("http://localhost:3001/store");
-    return dispatch();
-    /*Aquí es donde agregas tu código*/
-  } catch (error) {
-    console.log(error);
-  }
-=======
-   try {
       let response = await axios.get('http://localhost:3001/store');
-      return dispatch();
       /*Aquí es donde agregas tu código*/
-   } catch (error) {
-      console.log(error);
-   }
->>>>>>> 7f4bfec170b210cdec1b3d2861b04883162a2c08
+      return dispatch();
 };
 ```
 
 ¡Ahora te toca terminar el **dispatch** para completar la función!
 
-<<<<<<< HEAD
-
-> # NOTA: Puedes echar un vistazo al archivo **db.json**, ahí están los datos que enviará la **api**.
->
 > NOTA: Recuerda que axios devuelve la repuesta en forma de objeto en una propiedad llamada data, tenlo en cuenta al momento de terminar el dispatch. Puedes echar un vistazo al archivo **db.json**, ahí están los datos que enviará la **api**.
->
-> > > > > > > 949123bdd3f0e6e51101820ee7a361a4f8863b7c
 
 <br />
 
@@ -228,7 +201,7 @@ Revisa lo que tiene por un momento. Verás que el componente tiene un formulario
 
 3. Este componente debe recibir por props la función "_addProduct_". Te recomendamos que la recibas haciendo _**destructuring**_.
 
-4. Crea una función (dentro del cuerpo del componente `Form`) llamada **handleSubmit**. Esta función ejecutará la función recibida por props: `addProduct`. A ésta le pasaremos como argumento el estado local llamado "product" en forma de _**spread operator**_. De esta forma también indicaremos que la propiedad **id** va a ser igual a la función **now()** del objeto global _Date_.
+4. Crea una función (dentro del cuerpo del componente `Form`) llamada **handleSubmit**. Esta función ejecutará la función recibida por props: `addProduct`. A ésta le pasaremos como argumento un objeto con el estado local llamado "product" en forma de _**spread operator**_. De esta forma también indicaremos que la propiedad **id** va a ser igual a la función **now()** del objeto global _Date_.
 
 ```javascript
 Date.now();
@@ -236,7 +209,7 @@ Date.now();
 
 Esto le permitirá a cada producto tener un ID único.
 
-5. Una vez hecho esto, ve al botón que se encuentra en el componente, y mediante un evento `onClick`, pásale esta función recién creada.
+5. Una vez hecho esto, ve a la etiqueta `<form>` que se encuentra en el componente, y mediante un evento `onSubmit`, pásale esta función recién creada.
 
 > **NOTA:** prueba ejecutar la función _Date.now()_ en tu consola y verifica qué respuesta te da.
 
@@ -256,15 +229,15 @@ Lo que hará este componente será renderizar nuestra lista de productos en el n
 
 1. Importa el componente `Card` que, como verás, ya está importado y sólo debés descomentarlo. (No cambiar la manera en la que se importa, porque sino fallarán los test)
 
-2. Termina de crear la función **mapStateToProps**. Esta recibe por parámetro _state_. En el cuerpo de esta función se retornará un objeto que tenga como propiedad _list_, y que será igual a "_state.list_".
+2. Termina de crear la función **mapStateToProps**. Esta recibe por parámetro _state_. En el cuerpo de esta función se retornará un objeto que tenga como propiedad _list_ que será igual a "_state.list_" y una propiedad _storeName_ que será igual a "_state.storeName_".
 
-3. Termina de crear la función **mapDispatchToProps**. Esta recibe por parámetros _dispatch_. En el cuerpo de esta función se retornará un objeto que tenga como propiedad _getStoreName_, cuyo valor será una función que tendrá que hacer un `dispatch` de _actions.getStoreName_.
+3. Termina de crear la función **mapDispatchToProps**. Esta recibe por parámetros _dispatch_. En el cuerpo de esta función se retornará un objeto que tenga como propiedad _getStoreName_, cuyo valor será una función que tendrá que hacer un `dispatch` de la action _getStoreName_.
 
-4. El componente `Products` recibe por props nuestro estado global "**list**". Te recomendamos que las recibas haciendo _**destructuring**_.
+4. El componente `Products` recibe por props nuestro estado global "**list**" y "**storeName**", además de la función "**getStoreName**". Te recomendamos que las recibas haciendo _**destructuring**_.
 
 5. Declara un **useEffect** y despacha la action **getStoreName** dentro. Debe ejecutarse solamente al montarse el componente.
 
-6. Renderiza un `<h1>`, tendrá que contener el valor del estado global **storeName**.
+6. La etiqueta `<h1>` que se encuentra en el componente, tendrá que contener el valor del estado global **storeName**.
 
 7. Ahora tendrás que renderizar nuestra lista de productos. Utiliza el método **map** para mapear la propiedad **list**. Por cada producto en esta lista deberás renderizar un componente _**Card**_ (importado previamente). A este componente `Card` pásale como propiedades el **name**, el **price**, el **id** de cada producto, y una **key** que los pueda diferenciar.
 

@@ -18,7 +18,7 @@ describe("01 | Ejercicios", () => {
       <BrowserRouter>
         <App />
       </BrowserRouter>,
-      div
+    div
     );
   });
 });

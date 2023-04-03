@@ -1,0 +1,26 @@
+```javascript
+```
+
+REACT: es una libreria de JS que es declarativa, eificiente uy flexible...
+Declarativo a diferencia de la forma iterativa, no formulamos el como queremos que se hagan las cosas... solo las pedimos, y la libreria se encarga de hacerlas...
+Que hace React: react realiza un DOM virtual que en primera instancia es una copia del DOM, luego, si hace un cambio en ese DOM virtual, lo compara con el DOM y si hay diferencias modifica el DOM centrandose en cambiar solo los nodos modificados...
+
+COMPONENTES EN REACT: son pequeñas unidades, casi como modulos de funcionamiento en donde nosotros estaremos trabajando con JS, HTML y probablemente CSS, la idea de los componentes es poder reutilizar codigo, además de separar responsabilidades...
+
+Debemos identificar muy bien los elementos con responsabilidades similares para que estos se conviertan en un componente...
+
+El componente va a manejar informacion de distintas maneras, pricipalmente dos sets de infomacion, PROPS...(el equivalente en una una funcion de JS, son los parametros), el componente recibe props de afuera del componente, generalmente del componente padre, ademas, un componente va a tener un ESTADO INTERNO... que es un conjunto de variables propias(internas) del componente...
+
+```javascript
+// Para crear el DOM virtual
+
+const root = ReactDOM.createRoot(document.getElementById("root"))
+root.render(<App/>) //App sería el primer componete
+
+//REACT CREA UN ROOT DESDE UNA ETIQUETA HTML (ROOT) Y RENDERIZA (MUESTRA EN PANTALLA) EL COMPONENTE APP
+// En React interactuamos con el dom virtual...
+// el componente retorna un elemento html que es lo que se mira en pantalla...
+
+```
+
+En el HTML principal va a haber un elemento HTML que tendrá id = "root", y este será el componente principal

@@ -8,6 +8,9 @@
 
   <link href="https://fonts.googleapis.com/css?family=Russo+One|Ubuntu" rel="stylesheet">
   <link href="css/index.css" rel="stylesheet">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1" /> 
+  <!-- colocando el viewport en el head, el navegador sabe que el sitio es responsive -->
 
   <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
@@ -17,12 +20,28 @@
 <body>
 
  <!-- Código del nav acá -->
+ <!-- colocamos un nav para la barra de navegación con la clase navBar -->
+<nav class="navBar">
+  <h1 class="titulo">
+Música 8D
+<!-- titulo del sitio, no viene por defecto en la homework -->
+  </h1>
+  <div class="optionsContainer">
+    <!-- span que simulan los botones de la barra del navegador -->
+    <button class="ov-btn-slide-right">Inicio</button>
+      <button class="ov-btn-slide-right">Sobre Nosotros</button>
+      <button class="ov-btn-slide-right">Blog</button>
+      <button class="ov-btn-slide-right">Contacto</button>
+      <button class="ov-btn-slide-right">Registrarse</button>
 
+  </div>
+</nav>
   <div class="container home">
 
     <header class="intro">
        <!-- Código de header img acá -->
-      
+      <img src="./img/main-header.png" alt="img" class="headerImg">
+      <!-- se coloca la imagen faltante -->
       <h2>Nueva tecnología</h2>
 
       <p>En estos días se viralizaron nuevas versiones de temas que, escuchados con auriculares, suenan de una manera muy diferente a la original. ¿Aún no escuchaste? Sorprendete</p>

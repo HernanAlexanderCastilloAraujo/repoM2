@@ -1,0 +1,15 @@
+.claro{
+    border: 1px solid black;
+    color: black;
+    width: 5em;
+    height: 5em;
+
+}
+
+.oscuro{
+    border: 1px solid black;
+    color: white;
+    width: 5em;
+    height: 5em;
+    background-color: black;
+}

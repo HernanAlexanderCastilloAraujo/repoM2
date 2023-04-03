@@ -43,6 +43,7 @@
   margin: 5px;
   font-weight: 500;
   border-radius: 5%;
+  transition: 0.5s;
 }
 .listItem:hover {
   background-color: #262623c9;

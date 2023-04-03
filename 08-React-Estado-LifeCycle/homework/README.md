@@ -2,12 +2,12 @@
 
 ## **Temas de la homework**
 
--  Estados
--  Ciclo de vida
--  One way data flow
--  Hooks
--  useState
--  useEffect
+- Estados
+- Ciclo de vida
+- One way data flow
+- Hooks
+- useState
+- useEffect
 
 <br />
 
@@ -15,7 +15,7 @@
 
 ## **Duración total estimada 🕒**
 
-110 minutos
+3 horas y media
 
 <br />
 
@@ -25,9 +25,9 @@
 
 Al finalizar esta homework habrás aprendido a:
 
--  Crear componentes de estado.
--  Utilizar métodos de array como map y filter.
--  Manejar el ciclo de vida de un componente.
+- Crear componentes de estado.
+- Utilizar métodos de array como map y filter.
+- Manejar el ciclo de vida de un componente.
 
 <br />
 
